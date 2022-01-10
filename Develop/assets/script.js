@@ -1,6 +1,5 @@
 // Variables
 var DateTime = luxon.DateTime;
-var blocks = [];
 
 // Setting current date to readable format
 var now = DateTime.now().toLocaleString();
