@@ -1,5 +1,6 @@
 // Variables
 var DateTime = luxon.DateTime;
+var blocks = [];
 
 // Setting current date to readable format
 var now = DateTime.now().toLocaleString();
@@ -34,4 +35,18 @@ var checkTime = function() {
     });
 };
 
+// Function to save time blocks
+var saveBlocks = function(){
+    $(".saveBtn").on("click", function() {
+        var data = $(this).siblings(".description").val();
+        var time = $(this).attr("id");
+
+        // Save text in local storage
+        localStorage.setItem(time, data);
+    });
+
+    $("#8am .description").val(localStorage.getItem("8am"));
+};
+
 checkTime();
+saveBlocks();
